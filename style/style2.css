@@ -130,3 +130,47 @@ body {
     text-overflow: ellipsis;
     color: #fff;
 }
+
+/* ------------------- RESPONSIVIDADE CRUD ------------------- */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 1024px) {
+    .crud-form {
+        max-width: 90%;
+        flex-direction: column;
+    }
+
+    .crud-form input,
+    .btn {
+        flex: 1 1 100%;
+    }
+
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* Celulares e telas pequenas */
+@media (max-width: 768px) {
+    .crud-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .crud-form {
+        margin: 120px 10px 20px 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .crud-form input,
+    .btn {
+        width: 100%;
+    }
+
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        padding: 0 10px 50px 10px;
+    }
+}
