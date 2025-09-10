@@ -4,173 +4,262 @@
     box-sizing: border-box;
 }
 
-
 body {
-    background: #000;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 70px;
+    background-color: #0F0F0F;
+    color: #F1F1F1;
+    font-family: "Roboto", sans-serif;
+    padding: 20px;
 }
 
-
 .crud-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #111;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;
-    border-bottom: 2px solid #222;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #3d3d3d;
+    padding-bottom: 20px;
 }
 
-.crud-header h1 {
-    font-size: 22px;
+h1 {
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+
+.btn,
+.btn-voltar,
+.file-label {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn-voltar:hover,
+.file-label:hover {
+    transform: scale(1.03);
 }
 
 .btn-voltar {
-    background: #e50914;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #272727;
+    color: #F1F1F1;
 }
 
 .btn-voltar:hover {
-    background: #b00610;
+    background-color: #3f3f3f;
 }
 
+#btnAdicionar {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+#btnAdicionar:hover {
+    background-color: #cc0000;
+}
+
+#btnLimpar {
+    background-color: #272727;
+    color: #F1F1F1;
+}
+
+#btnLimpar:hover {
+    background-color: #c9302c;
+}
 
 .crud-form {
-    margin: 90px auto 20px;
-    max-width: 600px;
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 12px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.crud-form input {
-    flex: 1;
+#titulo {
+    flex: 2;
+    background-color: #121212;
+    border: 1px solid #3d3d3d;
+    color: #F1F1F1;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background: #222;
-    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
-
-.btn {
-    background: #1a73e8;
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 5px;
-    cursor: pointer;
+#titulo:focus {
+    outline: none;
+    border-color: #FF0000;
 }
 
-.btn:hover {
-    background: #1669c1;
+.file-label {
+    background-color: #272727;
+    color: #F1F1F1;
+    text-align: center;
+    flex: 1;
 }
 
-.btn.danger {
-    background: #e50914;
+.file-label:hover {
+    background-color: #3f3f3f;
 }
 
-.btn.danger:hover {
-    background: #b00610;
+#arquivo {
+    display: none;
 }
 
+.message {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.message.success {
+    background-color: #228B22;
+    color: white;
+}
+
+.message.error {
+    background-color: #D32F2F;
+    color: white;
+}
 
 .content {
-    max-width: 1000px;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* cards menores */
     gap: 15px;
-    padding: 0 20px 50px 20px;
 }
-
 
 .card {
-    background: #111;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    transition: transform 0.2s;
+    background-color: #202020;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
 }
-
 .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-3px);
 }
 
 .card img {
     width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.card:hover img {
-    transform: scale(1.05);
+    height: 120px;     
+    object-fit: cover;  
+    border-radius: 6px;
 }
 
 .card h3 {
-    font-size: 14px;
-    padding: 8px 10px;
-    height: 40px;
+    margin: 6px 0;
+    font-size: 0.85rem;
+    color: #fff;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.card-actions button {
+    display: flex;
+    align-items: center;
+    gap: 4px;               
+    padding: 5px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.card-actions button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.card-actions .btn-edit {
+    background-color: rgba(30,136,229,0.85); 
+}
+.card-actions .btn-edit:hover {
+    background-color: #1e88e5; 
+}
+
+.card-actions .btn-delete {
+    background-color: rgba(211,47,47,0.85); 
+}
+.card-actions .btn-delete:hover {
+    background-color: #d32f2f; 
+}
+
+
+.edit-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+
+.edit-title-input {
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #3d3d3d;
+    background-color: #121212;
+    color: #fff;
+    width: 90%;
+}
+
+
+.edit-mode button {
+    padding: 4px 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
     color: #fff;
 }
 
-/* ------------------- RESPONSIVIDADE CRUD ------------------- */
 
-/* Tablets e dispositivos médios */
-@media (max-width: 1024px) {
-    .crud-form {
-        max-width: 90%;
-        flex-direction: column;
-    }
-
-    .crud-form input,
-    .btn {
-        flex: 1 1 100%;
-    }
-
-    .content {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
+.edit-mode .btn-change-img {
+    background-color: rgba(255, 165, 0, 0.85); 
+}
+.edit-mode .btn-change-img:hover {
+    background-color: #ff9800;
 }
 
-/* Celulares e telas pequenas */
-@media (max-width: 768px) {
-    .crud-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
 
-    .crud-form {
-        margin: 120px 10px 20px 10px;
-        flex-direction: column;
-        gap: 10px;
-    }
+.edit-mode .btn-save {
+    background-color: rgba(30, 136, 229, 0.85); 
+}
+.edit-mode .btn-save:hover {
+    background-color: #1e88e5;
+}
 
-    .crud-form input,
-    .btn {
-        width: 100%;
-    }
 
-    .content {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        padding: 0 10px 50px 10px;
-    }
+.edit-mode .btn-cancel {
+    background-color: rgba(158, 158, 158, 0.85); 
+    color: #000;
+}
+.edit-mode .btn-cancel:hover {
+    background-color: #9e9e9e;
 }

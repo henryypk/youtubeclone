@@ -4,17 +4,12 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
-}
 
 body {
     font-family: Arial, sans-serif;
     background-color: #0e0f0f;
     color: #fff;
 }
-
 
 .header {
     width: 100%;
@@ -34,7 +29,7 @@ body {
 .logo {
     font-size: 29px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -79,7 +74,6 @@ body {
     cursor: pointer;
 }
 
-
 .sidebar {
     position: fixed;
     top: 60px;
@@ -110,28 +104,19 @@ body {
     gap: 15px;
     border-radius: 4px;
     transition: background 0.2s;
-    overflow: hidden;
-}
-
-.sidebar-item i {
-    font-size: 18px;
-    width: 20px;
-    text-align: center;
 }
 
 .sidebar-item:hover {
     background-color: #1b1b1b;
 }
 
-
 .content {
     margin-left: 220px;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
-
 
 .card {
     background: #111;
@@ -143,18 +128,17 @@ body {
     transition: transform 0.2s;
 }
 
+.card img {
+    width: 100%;
+    height: 250px;      
+    object-fit: cover;   
+    transition: transform 0.3s;
+    display: block;
+}
+
 .card:hover {
     transform: scale(1.03);
 }
-
-.card img {
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
 .card:hover img {
     transform: scale(1.05);
 }
@@ -168,6 +152,20 @@ body {
     color: #fff;
 }
 
+@media(max-width: 1024px) {
+    .content {
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 180px;
+    }
+}
+
+@media(max-width: 768px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+        padding: 10px;
+    }
+}
 
 html::-webkit-scrollbar {
     width: 8px;
@@ -188,10 +186,7 @@ html::-webkit-scrollbar-thumb:hover {
     background-color: #5a5a5a;
 }
 
-/* ------------------- RESPONSIVIDADE SITE PRINCIPAL ------------------- */
-
-/* Tablets e dispositivos médios */
-@media (max-width: 1024px) {
+@media(max-width:1024px) {
     .header-container {
         flex-direction: column;
         align-items: flex-start;
@@ -217,8 +212,7 @@ html::-webkit-scrollbar-thumb:hover {
     }
 }
 
-/* Celulares e telas pequenas */
-@media (max-width: 768px) {
+@media(max-width:768px) {
     .header-container {
         flex-direction: column;
         align-items: flex-start;
