@@ -1,85 +1,156 @@
-/* Reset básico */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html, body { height: 100%; } /* útil para comportamento de rolagem */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #0e0f0f;
-  color: #333;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0e0f0f;
+    color: #333;
+}
+
+
 .header {
-  width: 100%;
-  background-color: #161818;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 10px 20px;
+    width: 100%;
+    background-color: #0e0f0f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
 }
 
 .header-container {
-  max-width: 1800px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    max-width: 1900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-  font-size: 29px;
-  font-weight: bold;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    font-size: 29px;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.logo-img { width: 32px; height: auto; }
+.logo-img {
+    width: 32px;
+    height: auto;
+}
 
 .search-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .search-bar {
-  background-color: #1b1b1b;
-  width: 50%;
-  padding: 8px 15px;
-  border: 1px solid #1a1919;
-  border-radius: 20px;
-  font-size: 16px;
-  transition: border-color 0.3s;
+    background-color: #1b1b1b;
+    width: 50%;
+    padding: 8px 15px;
+    border: 1px solid #1a1919;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: border-color 0.3s;
 }
 
-.search-bar:focus { border-color: #007bff; outline: none; }
+.search-bar:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
-.conta { display: flex; align-items: center; }
+.conta {
+    display: flex;
+    align-items: center;
+}
 
 .conta-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
 }
 
-/* Conteúdo de exemplo para testar rolagem */
-.fake-content {
-  height: 2000px; /* remove ou ajuste quando tiver conteúdo real */
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #0e0f0f;
+    ;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
 }
 
-/* ========== Barra de rolagem personalizada ========== */
-/* Chrome / Edge / Opera / Brave (webkit) */
-html::-webkit-scrollbar { width: 8px; }
-html::-webkit-scrollbar-track { background: transparent; } /* trilho */
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.sidebar-item {
+    padding: 12px 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    overflow: hidden;
+}
+
+
+.sidebar-item i {
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+
+.sidebar-item:hover {
+    background-color: #1b1b1b;
+}
+
+
+.content {
+    margin-left: 220px;
+    /* mesmo tamanho da sidebar */
+    padding: 20px;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 html::-webkit-scrollbar-thumb {
-  background-color: #3a3a3a;
-  border-radius: 10px;
-  border: 2px solid transparent; /* cria espaço visual */
-  background-clip: padding-box;
-  transition: background 0.25s;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background 0.25s;
 }
-html::-webkit-scrollbar-thumb:hover { background-color: #5a5a5a; }
 
-/* Firefox */
-* { scrollbar-width: thin; scrollbar-color: #3a3a3a transparent; }
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #5a5a5a;
+}
