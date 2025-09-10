@@ -12,7 +12,7 @@ body {
 body {
     font-family: Arial, sans-serif;
     background-color: #0e0f0f;
-    color: #333;
+    color: #fff;
 }
 
 
@@ -87,7 +87,6 @@ body {
     width: 220px;
     height: 100%;
     background-color: #0e0f0f;
-    ;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -95,13 +94,11 @@ body {
     overflow-y: auto;
 }
 
-
 .sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 
 .sidebar-item {
     padding: 12px 20px;
@@ -116,13 +113,11 @@ body {
     overflow: hidden;
 }
 
-
 .sidebar-item i {
     font-size: 18px;
     width: 20px;
     text-align: center;
 }
-
 
 .sidebar-item:hover {
     background-color: #1b1b1b;
@@ -131,9 +126,48 @@ body {
 
 .content {
     margin-left: 220px;
-    /* mesmo tamanho da sidebar */
     padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
 }
+
+
+.card {
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 14px;
+    padding: 8px 10px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+}
+
 
 html::-webkit-scrollbar {
     width: 8px;
@@ -148,7 +182,6 @@ html::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: 2px solid transparent;
     background-clip: padding-box;
-    transition: background 0.25s;
 }
 
 html::-webkit-scrollbar-thumb:hover {
